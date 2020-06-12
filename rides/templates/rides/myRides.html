@@ -6,16 +6,19 @@
         <ul class="list-group mt-3">
             {% if request.user == i.author %}
             <li class="list-group-item">
-                <h6><b>{{i.pick_up_location}} - {{i.drop_location}}</b>: <span class="m-2">{{i.date}}</span></h6>
+                <h6><b>{{i.pick_up_location}} - {{i.drop_location}}</b>: <span class="m-2">{{i.date}}, {{i.time}}</span></h6>
                 <a style="margin-right:20px;" class="btn btn-outline-primary mb-2" href="{% url 'updateRide' i.id %}">Изменить</a>
                 <a class="btn btn-outline-danger mb-2" href="{% url 'deleteRide' i.id %}">Удалить</a>
                 <br />
                 <a class="btn btn-outline-primary" href="/ride/{{i.id}}">Подробнее</a>
             </li>
-            {% else %}
-            Тут пока нет поездок
         </ul>
         {% endif %}
         {% endfor %}
+        {% if request.user == i.author %}
+        {% else %}
+        Пока поездок нет
+        {% endif %}
+        <a class="btn btn-outline-primary" href="{% url 'join_rides' %}">Мои поездки в качестве попутчика</a>
     </div>
         {% endblock %}

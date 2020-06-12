@@ -21,6 +21,7 @@
                 <a class="btn btn-outline-primary" href="/ride/{{i.id}}">Подробнее</a>
                 {% else %}
                 <a class="btn btn-outline-primary" href="{% url 'login'%}?next={{request.path}}">Подробнее</a>
+                {% endif %}
             </li>
         </ul>
 
