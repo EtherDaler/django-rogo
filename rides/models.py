@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from mainApp.models import UserModel
 from django.core.validators import MaxValueValidator, MinValueValidator
 from datetime import date
+import datetime
 
 def default_datetime(): 
     return datetime.datetime.now()
@@ -12,7 +13,7 @@ def default_datetime():
 
 class Rides(models.Model):
     author = models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = 'Создатель поездки', blank = True, null = True)
-    date_create = models.DateTimeField(null=True, blank = True, verbose_name = 'Дата создания')
+    date_create = models.DateTimeField(default=default_datetime(), null=True, blank = True, verbose_name = 'Дата создания')
     pick_up_location = models.CharField(max_length=120, verbose_name='Место сбора')
     drop_location = models.CharField(max_length=120, verbose_name='Пункт назначения')
     total_rides = models.IntegerField(verbose_name='Количество пассажиров(мин=1, макс=10)', validators=[MaxValueValidator(10),MinValueValidator(1)])
