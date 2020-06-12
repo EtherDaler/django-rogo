@@ -22,7 +22,7 @@ class Rides(models.Model):
     car = models.CharField(max_length=120,default='',verbose_name='Марка авто')
     car_number = models.CharField(max_length=12, verbose_name = 'Номер машины (01 0000 GG)', default = '')
     car_year_issue = models.CharField(max_length=4, verbose_name='Год выпуска машины', default = '')
-    phone_number = models.CharField(max_length=13, default='', verbose_name='Номер телефона (используйте в начале код страны)')
+    phone_number = models.CharField(max_length=15, default='', verbose_name='Номер телефона (используйте в начале код страны)')
     def __str__(self):
         return '%s - %s : %s' % (self.pick_up_location,self.drop_location,self.date) # отображение в качестве названия объекта БД
 
