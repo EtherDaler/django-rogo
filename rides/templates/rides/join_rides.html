@@ -2,15 +2,17 @@
 
 {% block content %}
 {% for i in listRides %}
-<ul class="list-group mt-3">
-    {% if request.user == i.author %}
-    <li class="list-group-item">
-        <h6><b>{{i.pick_up_location}} - {{i.drop_location}}</b>: <span class="m-2">{{i.date}}</span></h6>
-        <br />
-        <a class="btn btn-outline-primary" href="/ride/{{i.id}}">Подробнее</a>
-    </li>
-</ul>
-{% endif %}
+    <ul class="list-group mt-3">
+        {% if request.user == i.author %}
+        <li class="list-group-item">
+            <h6><b>{{i.pick_up_location}} - {{i.drop_location}}</b>: <span class="m-2">{{i.date}}</span></h6>
+            <br />
+            <a class="btn btn-outline-primary" href="/ride/{{i.id}}">Подробнее</a>
+        </li>
+        {% else %}
+        Тут пока нет поездок
+        {% endif %}
+    </ul>
 {% endfor %}
 <a class="btn btn-outline-primary" href="{% url 'myRides'%}">Поездки, в которых я водитель</a>
 {% endblock %}

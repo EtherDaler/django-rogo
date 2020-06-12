@@ -12,8 +12,11 @@
                 <br />
                 <a class="btn btn-outline-primary" href="/ride/{{i.id}}">Подробнее</a>
             </li>
+            {% else %}
+            Тут пока нет поездок
         </ul>
         {% endif %}
         {% endfor %}
+        <a class="btn btn-outline-primary" href="{% url 'join_rides'%}">Поездки, в которых я попутчик</a>
     </div>
         {% endblock %}
