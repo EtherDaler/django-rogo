@@ -61,7 +61,6 @@ def register(request):
             # Save the User object
             user_inf = user_form.cleaned_data
             new_user.save()
-            profile = UserModel.objects.create(name=user_inf['username'],email=user_inf['email'],first_name=user.inf['user_first_name'],last_name=user.inf['user_last_name'])
             return render(request, 'registration/signup_done.html', {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
