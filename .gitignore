@@ -1,2 +1,3 @@
 myvenv/
 .vs/
+__pycache__/
