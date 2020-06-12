@@ -17,7 +17,7 @@ class Rides(models.Model):
     pick_up_location = models.CharField(max_length=120, verbose_name='Место сбора')
     drop_location = models.CharField(max_length=120, verbose_name='Пункт назначения')
     total_rides = models.IntegerField(verbose_name='Количество пассажиров(мин=1, макс=10)', validators=[MaxValueValidator(10),MinValueValidator(1)])
-    date = models.DateField(verbose_name='Дата(дд.мм.гг)')
+    date = models.DateField(verbose_name='Дата(гг-мм-дд)')
     time= models.TimeField(verbose_name='Время(ч:м)',auto_now=False, auto_now_add=False, null=True)
     price = models.CharField(max_length=120,verbose_name='Цена (с.)', default='')
     car = models.CharField(max_length=120,default='',verbose_name='Марка авто')
