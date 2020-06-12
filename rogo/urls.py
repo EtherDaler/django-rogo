@@ -25,4 +25,4 @@ urlpatterns = [
     path('ride/', include('rides.urls')),
     #path('offerRide/',include('rides.urls')),
 ]
-ururlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
