@@ -165,4 +165,5 @@ DATABASES['default'].update(db_from_env)
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
-MEDIA_URL = '/images/'
+MEDIA_URL = 'mainApp/image/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/mainApp/image/users')
