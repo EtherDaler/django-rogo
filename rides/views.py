@@ -80,12 +80,6 @@ def myRides(request):
     }
     return render(request,'rides/myRides.html',context)
 
-def join_rides(request):
-    listRides = Join.objects.all() # здесь мы наследуем БД 
-    context={ # через этот словарь можно передавать текст в html
-        'listRides':listRides,
-    }
-    return render(request,'rides/join_rides.html',context)
 
 def deleteRide(request,pk):
     get_ride = Rides.objects.get(pk=pk)
