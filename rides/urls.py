@@ -13,4 +13,5 @@ urlpatterns = [
     path('updateRide/<int:pk>',views.updateRide,name='updateRide'),
     path('myRides/',views.myRides,name='myRides'),
     path('deleteRide/<int:pk>/',views.deleteRide,name='deleteRide'),
+    path('join_rides/',views.join_rides,name='join_rides')
 ]

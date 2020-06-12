@@ -4,7 +4,7 @@
     <div style="background-color:silver">
         <h1 style="margin-left:3%;" class="mt-4">Предложить поездку</h1>
         <!-- Button trigger modal -->
-       {% if messages %}
+        {% if messages %}
         <div class="alert alert-success">
             {% for text in messages %}
             {{text}}
@@ -36,7 +36,10 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                {% if user.is_authenticated %}
                 <button data-action="submit" form="add_form" type="submit" class="btn btn-primary">Добавить</button>
+                {% else %}
+                <a class="btn btn-outline-primary" href="{% url 'login'%}?next={{request.path}}">Добавить</a>
             </div>
         </div>
     </div>
