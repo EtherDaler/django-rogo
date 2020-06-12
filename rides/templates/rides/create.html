@@ -1,0 +1,44 @@
+{% extends "rides/index.html" %}
+
+{% block content %}
+    <div style="background-color:silver">
+        <h1 style="margin-left:3%;" class="mt-4">Предложить поездку</h1>
+        <!-- Button trigger modal -->
+       {% if messages %}
+        <div class="alert alert-success">
+            {% for text in messages %}
+            {{text}}
+            {% endfor %}
+        </div>
+        {% endif %}
+        <button style="margin-left:3%; margin-top:2%; margin-bottom:25%" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Предложить поездку
+        </button>
+        <a style="margin-left:3%; margin-top:2%; margin-bottom:25%" class="btn btn-outline-primary" href="/rides">Вернуться к списку поездок</a>
+    </div>
+
+
+<!-- Modal -->
+<div data-id="modal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Создание поездки</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="add_form" method="post">
+                    {% csrf_token %}
+                    {{form}}
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button data-action="submit" form="add_form" type="submit" class="btn btn-primary">Добавить</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

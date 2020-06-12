@@ -1,0 +1,8 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block content %}
+	<div style="padding-bottom:400px">
+		<h1>Добро пожаловать {{ new_user.first_name }} {{ new_user.last_name }}!</h1>
+		<p>Вы успешно зарегистрировались. Сейчас вы можете авторизоваться <a href="{% url 'login'%}?next={{request.path}}">Войти</a>.</p>
+	</div>
+{% endblock %}

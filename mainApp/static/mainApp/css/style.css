@@ -1,0 +1,129 @@
+/*main menu*/
+body {
+    background-image: url("image/pogoda.jpg");
+}
+
+header {
+    margin-top: 200px;
+    font-family: Cuprum, Arial, Helvetical, sans-serif;
+}
+
+.dws-menu {
+    margin: 0;
+    padding: 0;
+}
+
+    .dws.dws-menu ul,
+    .dws-menu ol {
+        list-style: none;
+    }
+
+    .dws-menu > ul {
+        display: flex;
+        justify-content: center;
+    }
+
+        .dws-menu > ul li a {
+            display: block;
+            padding: 15px 30px 15px 40px;
+            font-size: 14px;
+            color: #454547;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .dws-menu > ul li {
+            position: relative;
+         
+        }
+
+            .dws-menu > ul li > a i.fa {
+                position: absolute;
+                top: 15px;
+                left: 12px;
+                font-size: 18px;
+            }
+
+            .dws-menu > ul li:first-child {
+                
+            }
+
+            .dws-menu > ul li:last-child {
+               
+            }
+
+    .dws-menu li a:hover {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cedbe9+0,aac5de+17,6199c7+50,3a84c3+51,419ad6+59,4bb8f0+71,3a8bc2+84,26558b+100;Blue+Gloss */
+        background: #cedbe9; /* Old browsers */
+        background: -moz-linear-gradient(top, #cedbe9 0%, #aac5de 17%, #6199c7 50%, #3a84c3 51%, #419ad6 59%, #4bb8f0 71%, #3a8bc2 84%, #26558b 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #cedbe9 0%,#aac5de 17%,#6199c7 50%,#3a84c3 51%,#419ad6 59%,#4bb8f0 71%,#3a8bc2 84%,#26558b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedbe9', endColorstr='#26558b',GradientType=0 ); /* IE6-9 */
+        color: #ffffff;
+        box-shadow: 1px 5px 10px -5px black;
+        transition: all 0.3s ease;
+    }
+
+    /*sub menu*/
+    .dws-menu li ul {
+        position: absolute;
+        min-width: 100px;
+        display: none;
+    }
+
+    .dws-menu li > ul li {
+        border: 1px solid #c7c8ca;
+    }
+
+        .dws-menu li > ul li a {
+            padding: 10px;
+            text-transform: none;
+            background: #e4e4e5;
+        }
+
+        .dws-menu li > ul li ul {
+            position: absolute;
+            right: -150px;
+            top: 0;
+        }
+
+    .dws-menu li:hover > ul {
+        display: block;
+    }
+
+    .dws-menu ul, .dws-menu li, .dws-menu span, .dws-menu a {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 10000;
+    }
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+.back_to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 9999;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #f5f5f5;
+    color: #444;
+    cursor: pointer;
+    border-radius: 2px;
+    display: none;
+}
+
+    .back_to_top:hover {
+        background: #e9ebec;
+    }
+
+.back_to_top-show {
+    display: block;
+}

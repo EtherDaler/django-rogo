@@ -1,0 +1,113 @@
+{% extends "mainApp/wrapper.html" %}
+{% block content %}
+{% load static %}
+<main role="main">
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#1E90FF"></rect></svg>
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>Авторизуйтесь сейчас.</h1>
+                        <p>Не зарегестрированы? Тогда сделайте это сейчас, чтобы пользоваться нашей платформой. Здесь вы сможете отправиться куда захотите или можете предложить поездку, чтобы не ехать одному.</p>
+                        <p><a class="btn btn-primary btn-lg" href="{% url 'login'%}?next={{request.path}}" role="button">Войдите</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <img src="{% static 'mainApp/image/car.jpg' %}" alt="" width="100%" height="100%" />
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Хотите отправиться в поездку?.</h1>
+                        <p>Найдите свою поездку среди множества других, чтобы отправиться туда-куда вы хотите.</p>
+                        <p><a class="btn btn-primary btn-lg" href="/rides" role="button">Найти поездку</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'mainApp/image/friends1.jpg' %}" alt="" width="100%" height="100%" />
+                <div class="container">
+                    <div class="carousel-caption text-right" style="color: floralwhite;">
+                        <h1>Скучно ехать одному?</h1>
+                        <p><b>Предложите поездку, чтобы найти людей, которым нужно с вами в 1 сторону, в компании всегда веселее.</b></p>
+                        <p><a class="btn btn-primary btn-lg" href="rides/offerRide" role="button">Предложить поездку</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+  
+
+
+
+    <hr class="featurette-divider">
+    <!--1-->
+    <div class="row featurette" style="max-width:100%;">
+        <div class="col-md-7">
+            <p style="margin-left:5%"><img src="{% static 'mainApp/image/seat-belt.png' %}" alt="" width="65" height="65" /></p>
+            <h2 class="featurette-heading" style="margin-left:2%">Безопасность превыше всего. <span class="text-muted">Мы заботимя о вас.</span></h2>
+            <p class="lead" style="margin-left:5%">
+                Будь то вы пассажиром на заднем сиденье или водителем, ваша безопасность для нас главное.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="{% static 'mainApp/image/safe.jpg' %}" alt="" width="500" height="500" />
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <!--2-->
+    <div class="row featurette" style="max-width:100%;">
+        <div class="col-md-7 order-md-2">
+            <p><img src="{% static 'mainApp/image/taxi-location.png' %}" alt="" width="65" height="65" /></p>
+            <h2 class="featurette-heading">ROGO помогает в путешествии . <span class="text-muted">Облегчаем жизнь.</span></h2>
+            <p class="lead">
+                Хотите отпраится в другой город или же посетить ближайшее государство? Найдите попутчика и присоединяйтесь к нему, чтобы не платить за самолет или не брать машины на прокат.
+            </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img src="{% static 'mainApp/image/cost-cities-5.png' %}" alt="" width="500" height="500" />
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <!--3-->
+    <div class="row featurette" style="max-width:100%;">
+        <div class="col-md-7">
+            <h2 class="featurette-heading" style="margin-left:2%">Они просто идут своей дорогой. <span class="text-muted">Обыденность.</span></h2>
+            <p class="lead" style="margin-left:5%">
+                Что делает опыт Rogo по-настоящему великим, так это люди за рулем. Они матери и отцы, студенты и преподаватели, ветераны, соседи, друзья. Наши партнеры ездят на собственных автомобилях - по собственному графику - в больших и малых городах.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="{% static 'mainApp/image/driver.jpg' %}" alt="" width="500" height="500" />
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <!--5-->
+    <div class="row featurette" style="max-width:100%;">
+        <div class="col-md-7" style="margin-left:2%">
+            <h2 class="featurette-heading">Готов всегда и везде. <span class="text-muted">Готовность.</span></h2>
+            <p class="lead">
+                Ежедневные поездки на работу? Посездки по всему городу? Ранний утренний рейс? Вечерние тусовки? Куда бы вы ни направлялись Рого подвезет - бронь не нужна.
+            </p>
+        </div>
+        <div class="col-md-5" style="margin-left:60%; max-width:60%">
+            <img src="{% static 'mainApp/image/screen-bg-2.png' %}" style="margin-bottom:20%" alt="" width="500" height="500" />
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    {% endblock %}
+</main> 

@@ -1,0 +1,15 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block content %}
+    <div class="conteiner" style="padding-bottom:250px; width:100%;">
+        <h1 style="padding-left:40%">Добро пожаловать,</h1>
+        <h1 style="padding-left:40%">{{ request.user.first_name }} {{ request.user.last_name }}</h1><br />
+        <h4 style="padding-left:37%">Выберите одну из функций нашего сайта:</h4>
+        <div class="row">
+            <div class="col-md-12 button-row" style="white-space: nowrap;margin-left: 38%";>
+                <a class="button button-bd" style=" padding-left: 60px; padding-right: 60px " href="/rides">Найти поездку </a>
+                <a class="button button-bd" style="" href="{% url 'offerRide' %}">Предложить поездку </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,1 @@
+web: gunicorn rogo.wsgi --log-file -

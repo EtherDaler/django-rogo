@@ -1,0 +1,27 @@
+{% extends "rides/index.html" %}
+
+{% block content %}
+    <div data-id="block" class="container mt-4" style="height: 100%;">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search" name="search" />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+        </form>
+        <!--<form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Поиск по месту сбора" aria-label="Search" name="search_pick" />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+    </form>-->
+        {% for i in listRides %}
+        <ul class="list-group mt-3">
+            <li class="list-group-item">
+                <h6><b>{{i.pick_up_location}} - {{i.drop_location}}</b>: <span class="m-2">{{i.date}}, {{i.time}}</span></h6>
+                <br />
+                <h6><b>цена: {{i.price}} c.</b></h6>
+                <br />
+                <a class="btn btn-outline-primary" href="/ride/{{i.id}}">Подробнее</a>
+
+            </li>
+        </ul>
+
+        {% endfor %}
+    </div>
+        {% endblock %}
