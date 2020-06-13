@@ -110,7 +110,7 @@
             <ul class="sidebar-nav" style="float:right;">
                 {% if user.is_authenticated %}
 
-                <li><a href="{% url 'profile' %}"> Пользователь: {{ request.user.first_name }}</a></li>
+                <li>Пользователь: {{ request.user.first_name }}</li>
                 <li><a href="{% url 'logout'%}">Выйти</a></li>
                 {% else %}
                 <li><a class="btn btn-outline-primary" href="{% url 'login'%}">Войти</a></li>
@@ -131,7 +131,7 @@
                         <li><a class="px-md-4 text-dark" href="{% url 'myRides' %}"><i class="fas fa-car"></i> Мои поездки</a></li>
                         {% endif %}
                         {% if user.is_authenticated %}
-                        <li style="background: #e4e4e5;padding:15px"><a href="{% url 'profile' %}"><i class="fas fa-user"></i> {{ request.user.first_name }}</a></li>
+                        <li style="background: #e4e4e5;padding:15px"><i class="fas fa-user"></i> {{ request.user.first_name }}</li>
                         <li><a href="{% url 'logout'%}">Выйти</a></li>
                         {% else %}
                         <li><a class="btn btn-outline-primary" href="{% url 'login'%}">Войти</a></li>
