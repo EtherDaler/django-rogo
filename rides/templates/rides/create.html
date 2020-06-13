@@ -1,7 +1,7 @@
 {% extends "rides/index.html" %}
 
 {% block content %}
-    <div style="background-color:silver">
+    <div class="content2" style="background-color:silver;padding-bottom:25%">
         <h1 style="margin-left:3%;" class="mt-4">Предложить поездку</h1>
         <!-- Button trigger modal -->
         {% if messages %}
@@ -11,10 +11,10 @@
             {% endfor %}
         </div>
         {% endif %}
-        <button style="margin-left:3%; margin-top:2%; margin-bottom:25%" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button style="margin-left:3%; margin-top:2%;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Предложить поездку
         </button>
-        <a style="margin-left:3%; margin-top:2%; margin-bottom:25%" class="btn btn-outline-primary" href="/rides">Вернуться к списку поездок</a>
+        <a style="margin-left:3%; margin-top:2%;" class="btn btn-outline-primary" href="/rides">Вернуться к списку поездок</a>
     </div>
 
 

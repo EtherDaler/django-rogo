@@ -11,17 +11,12 @@ from django.conf import settings
 #    def __str__(self):
 #        return 'Profile for user {}'.format(self.user.username)
 class UserModel(models.Model):
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200, null=True, )
-    phone = models.CharField(max_length=200, null=True)
-    email = models.CharField(null=True, max_length=200)
+    user = models.ForeignKey(User, verbose_name='Пользователь', null=True, blank=True, on_delete=models.CASCADE)
+    phone = models.CharField(verbose_name='Телефон', max_length=200, null=True)
     #profile_pic = models.ImageField(null=True, blank=True, default="profile_1.png")
-    date_created = models.DateTimeField(auto_now_add=True, null=True)
-    user_first_name = models.CharField(null=True, max_length=200)
-    user_last_name = models.CharField(null=True, max_length=200)
-    user_car = models.CharField(null=True, max_length=200)
-    user_car_year = models.CharField(null=True, max_length=200)
-    user_car_number = models.CharField(null=True, max_length=200)
+    user_car = models.CharField(verbose_name='Марка авто', null=True, max_length=200)
+    user_car_year = models.CharField(verbose_name='Год выпуска автомобиля', null=True, max_length=200)
+    user_car_number = models.CharField(verbose_name='Автомобильный номер', null=True, max_length=200)
 
     def __str__(self):
         return self.name

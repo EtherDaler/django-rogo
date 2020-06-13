@@ -1,4 +1,13 @@
 {% extends "mainApp/wrapper.html" %}
 {% block content %}
-
+    <div class="content1">
+        <div class="container mt-4">
+            <h1>Настройте свой профиль для более удобной работы</h1>
+            <form id="add_form" method="post">
+                {% csrf_token %}
+                {{form}}
+            </form>
+            <button data-action="submit" form="add_form" type="submit" class="btn btn-primary">Сохранить</button>
+        </div>
+    </div>
 {% endblock %}

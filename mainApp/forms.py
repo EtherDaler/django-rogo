@@ -7,7 +7,7 @@ from django.forms import ModelForm
 class UserForm(ModelForm):
     class Meta:
         model = UserModel
-        fields = '__all__'
+        fields = ('phone', 'user_car', 'user_car_year', 'user_car_number')
         exclude = ['user']
 
 class UserRegistrationForm(forms.ModelForm):

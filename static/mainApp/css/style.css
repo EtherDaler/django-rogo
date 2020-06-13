@@ -2,12 +2,22 @@
 body {
     background-image: url("image/pogoda.jpg");
 }
+.center {
+    position: center;
+    padding-left: 40%
+}
+
+.fun {
+    margin-left: 35%;
+}
 
 header {
     margin-top: 200px;
     font-family: Cuprum, Arial, Helvetical, sans-serif;
 }
-
+.dws-menu{
+    display:none;
+}
 .dws-menu {
     margin: 0;
     padding: 0;
@@ -21,6 +31,7 @@ header {
     .dws-menu > ul {
         display: flex;
         justify-content: center;
+
     }
 
         .dws-menu > ul li a {

@@ -95,7 +95,7 @@ def deleteRide(request,pk):
 def deleteJoiner(request,pk):
     get_joiner = Join.objects.get(pk=pk)
     get_joiner.delete() 
-    return redirect(reverse('ride_page'))
+    return redirect(reverse('Home'))
 
 def contact(request):
     if request.method =="POST":

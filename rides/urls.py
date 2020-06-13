@@ -14,4 +14,5 @@ urlpatterns = [
     path('myRides/',views.myRides,name='myRides'),
     path('deleteRide/<int:pk>/',views.deleteRide,name='deleteRide'),
     path('join_rides/', views.join_rides ,name='join_rides'),
+    path('deleteJoiner/<int:pk>/',views.deleteJoiner,name='deleteJoiner'),
 ]

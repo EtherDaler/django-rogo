@@ -35,7 +35,9 @@
         <h4>Попутчики:</h4>
         {% for item in getRide.join_rides.all %}
         <ul>
-            <li>{{item.author.first_name}} {{item.author.last_name}}: {{item.author_phone}}</li>
+            <li>{{item.author.first_name}} {{item.author.last_name}}: {{item.author_phone}}<br />
+            <a class="btn btn-outline-danger " href="{% url "deleteJoiner" item.id %}">Отказать</a>
+            </li>
         </ul>
         {% endfor %}
         {% endif %}

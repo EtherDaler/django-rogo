@@ -65,10 +65,3 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'registration/signup.html', {'user_form': user_form})
-
-    
-    
-
-
-
-

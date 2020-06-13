@@ -1,7 +1,8 @@
 {% extends "rides/index.html" %}
 
 {% block content %}
-    <div class="container mt-4" style="height: 100%;">
+<div class="content2" style="margin-bottom:20%">
+    <div class="container mt-4 ">
         {% for i in listRides %}
         <ul class="list-group mt-3">
             {% if request.user == i.author %}
@@ -15,10 +16,7 @@
         </ul>
         {% endif %}
         {% endfor %}
-        {% if request.user == i.author %}
-        {% else %}
-        Пока поездок нет
-        {% endif %}
-        <a class="btn btn-outline-primary" href="{% url 'join_rides' %}">Мои поездки в качестве попутчика</a>
     </div>
+    <a style="margin-left:3%; margin-top:2%;" class="btn btn-outline-primary" href="{% url 'join_rides' %}">Мои поездки в качестве попутчика</a>
+</div>
         {% endblock %}
