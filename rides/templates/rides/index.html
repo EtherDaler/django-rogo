@@ -54,11 +54,30 @@
             margin-left: 0; /* Отступ слева в браузере IE и Opera */
             padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
         }
+        * {
+	margin: 0;
+	padding: 0;
+}
+    html,
+    body {
+	    height: 100%;
+    }
+    .wrapper {
+	    display: flex;
+	    flex-direction: column;
+	    min-height: 100%;
+    }
+    .content1 {
+	    flex: 1 0 auto;
+    }
+    .footer {
+	    flex: 0 0 auto;
+    }
     </style>
 
 </head>
 <body>
-    <main>
+    <div class="wrapper">
         <div class="d-flex flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
             <a href="{% url 'index' %}"><img style="max-width: 65%" src="{% static 'mainApp/image/rogo.png' %}" /></a>
             <h5 class="my-0 mr-md-auto font-weight-normal"></h5>
@@ -129,7 +148,7 @@
             </div>
         </footer>
 
-    </main>
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
     <script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
