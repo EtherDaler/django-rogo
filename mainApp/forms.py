@@ -10,7 +10,7 @@ class UserForm(ModelForm):
         fields = ('phone', 'user_car', 'user_car_year', 'user_car_number')
         exclude = ['user']
 
-class UserRegistrationForm(forms.ModelForm):
+class CreateUserForm(forms.ModelForm):
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Повторите пароль', widget=forms.PasswordInput)
 
@@ -23,7 +23,8 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Пароли не совпадают.')
         return cd['password2']
-    def clean_email(self):
+    
+    def cleaned_email(self):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
         if email and User.objects.filter(email=email).exclude(username=username).exists():
