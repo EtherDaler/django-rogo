@@ -135,9 +135,17 @@ header {
         background: #e9ebec;
     }
 
-.back_to_top-show {
-    display: block;
+
+html,
+body {
+    height: 100%;
+    width:100%
 }
+.spin {
+    height: 578px;
+    width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -146,24 +154,20 @@ header {
 html,
 body {
     height: 100%;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    height: 100%;
+    width:100%
 }
 
 .wrapper {
-    display: table;
     height: 100%;
+    width: 100%
 }
 
 .content1 {
-    display: table-row;
     height: 100%;
+    width: 100%
 }
+.content1 {
+    width: 100%
+}
+
+

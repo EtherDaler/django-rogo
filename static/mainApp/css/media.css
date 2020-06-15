@@ -1,7 +1,6 @@
 *{
     transition: all .2s;
 }
-
 @media only screen and (max-width:992px){
     .content1 {
         width: 100%
@@ -52,6 +51,7 @@
     html, body {
         height: 100%;
         margin: 0;
+        width:100%;
     }
     .content1 {
         width: 100%;

@@ -1,7 +1,7 @@
 {% extends "mainApp/wrapper.html" %}
 
 {% block content %}
-    <div class="content1" style="padding-bottom:250px">
+    <main class="content1" role="main" style="padding-bottom:250px;">
         <div class="center">
             <h1 style="">Добро пожаловать,</h1>
             <h1 style="">{{ request.user.first_name }} {{ request.user.last_name }}</h1><br />
@@ -13,5 +13,5 @@
                 <a class="button button-bd" style="" href="{% url 'offerRide' %}">Предложить поездку </a>
             </div>
         </div>
-    </div>
+    </main>
 {% endblock %}
