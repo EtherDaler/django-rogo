@@ -56,10 +56,11 @@ def register(request):
             # Create a new user object but avoid saving it yet
             new_user = user_form.save(commit=False)
             # Set the chosen password
+            new_user.set_password(user_form.cleaned_data['password'])
             # Save the User object
             user_inf = user_form.cleaned_data
             new_user.save()
-            login(request, new_user)
+            login(request, user)
             return redirect('home')
     else:
         user_form = CreateUserForm()
