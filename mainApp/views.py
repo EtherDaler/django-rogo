@@ -13,7 +13,7 @@ from django.core.mail import send_mail
 from .models import UserModel
 from django.contrib import messages
 from .decorators import  unauthenticated_user
-from .token import account_activation_token
+from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -79,7 +79,7 @@ def register_page(request):
             message = render_to_string('registration/acc_active_email.html', {
                 'user': user,
                 'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user)
             })
             toemail = form.cleaned_data.get('email')

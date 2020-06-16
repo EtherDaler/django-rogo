@@ -20,5 +20,5 @@ class CreateUserForm(UserCreationForm):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
         if User.objects.filter(email=email).exclude(username=username).exists():
-            raise ValidationError(_('Данный электронный адрес уже используется другим пользователем.'))
+            raise ValidationError(_('This email already exists'))
         return email
