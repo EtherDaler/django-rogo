@@ -1,27 +1,20 @@
-(function () {
-    'use strict';
+'use strict';
 
-    function trackScroll() {
-        var scrolled = window.pageYOffset;
-        var coords = document.documentElement.clientHeight;
+const docEl = document.querySelector('[data-id="myRides"]');
+const joinerEl = docEl.querySelector('[data-id="joiner"]');
+const driverEl = docEl.querySelector('[data-id="driver"]');
+const drive1El = docEl.querySelector('[data-id="driver-bt"]');
+const joiner1El = docEl.querySelector('[data-id="joiner-bt"]');
 
-        if (scrolled > coords) {
-            goTopBtn.classList.add('back_to_top-show');
-        }
-        if (scrolled < coords) {
-            goTopBtn.classList.remove('back_to_top-show');
-        }
-    }
+joiner1El.style.display = 'none';
+driver1El.style.display = 'block';
 
-    function backToTop() {
-        if (window.pageYOffset > 0) {
-            window.scrollBy(0, -80);
-            setTimeout(backToTop, 0);
-        }
-    }
+drive1El.onclick = () => {
+	joinerEl.style.display = 'none';
+	driverEl.style.display = 'block';
+};
 
-    var goTopBtn = document.querySelector('.back_to_top');
-
-    window.addEventListener('scroll', trackScroll);
-    goTopBtn.addEventListener('click', backToTop);
-})();
+joiner1El.onclick = () => {
+	driverEl.style.display = 'none';
+	joinerEl.style.display = 'block';
+};

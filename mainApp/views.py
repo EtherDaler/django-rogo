@@ -49,22 +49,23 @@ def logout_page(request):
     return redirect('index')
 
     
-#def register(request):
-#    if request.method == 'POST':
-#        user_form = UserRegistrationForm(request.POST)
-#        if user_form.is_valid():
-#            # Create a new user object but avoid saving it yet
-#            new_user = user_form.save(commit=False)
-#            # Set the chosen password
-#            new_user.set_password(user_form.cleaned_data['password'])
-#            # Save the User object
-#            user_inf = user_form.cleaned_data
-#            new_user.save()
-#            return render(request, 'registration/signup_done.html', {'new_user': new_user})
-#    else:
-#        user_form = UserRegistrationForm()
-#    return render(request, 'registration/signup.html', {'user_form': user_form})
+def register(request):
+    if request.method == 'POST':
+        user_form = CreateUserForm(request.POST)
+        if user_form.is_valid():
+            # Create a new user object but avoid saving it yet
+            new_user = user_form.save(commit=False)
+            # Set the chosen password
+            # Save the User object
+            user_inf = user_form.cleaned_data
+            new_user.save()
+            login(request, new_user)
+            return redirect('home')
+    else:
+        user_form = CreateUserForm()
+    return render(request, 'registration/signup.html', {'user_form': user_form})
 
+"""
 def register_page(request):
     form = CreateUserForm()
     if request.method == 'POST':
@@ -79,7 +80,7 @@ def register_page(request):
             message = render_to_string('registration/acc_active_email.html', {
                 'user': user,
                 'domain': current_site.domain,
-                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user)
             })
             toemail = form.cleaned_data.get('email')
@@ -112,3 +113,4 @@ def activate(request, uidb64, token):
         #return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
+"""

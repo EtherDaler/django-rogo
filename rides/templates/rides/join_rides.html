@@ -1,24 +1,25 @@
 {% extends "rides/index.html" %}
 
 {% block content %}
-<div class="content2" style="margin-bottom:20%">
-    <div class="container mt-4">
-        {% for i in listRides %}
-        <ul class="list-group mt-3">
-            {% if request.user == i.author %}
-            <li class="list-group-item">
-                <h6><b>{{i.ride.pick_up_location}} - {{i.ride.drop_location}}</b>: <span class="m-2">{{i.ride.date}}, {{i.ride.time}}</span></h6>
-                <br />
-                <h6><b>цена: {{i.ride.price}} c.</b></h6>
-                <br />
-                <a class="btn btn-outline-danger " href="{% url 'deleteJoiner' i.id %}">Отменить</a>
-                <a class="btn btn-outline-primary" href="/ride/{{i.ride.id}}">Подробнее</a>
-            </li>
-        </ul>
-        {% endif %}
-        {% endfor %}
-
+{% load static %}
+    <div data-id="myRides" class="content2" style="margin-bottom:20%">
+        <div class="container mt-4">
+            {% for i in listRides %}
+            <ul class="list-group mt-3">
+                {% if request.user == i.author %}
+                <li class="list-group-item">
+                    <h6><b>{{i.ride.pick_up_location}} - {{i.ride.drop_location}}</b>: <span class="m-2">{{i.ride.date}}, {{i.ride.time}}</span></h6>
+                    <br />
+                    <h6><b>цена: {{i.ride.price}} c.</b></h6>
+                    <br />
+                    <a class="btn btn-outline-danger " href="{% url 'deleteJoiner' i.id %}">Отменить</a>
+                    <a class="btn btn-outline-primary" href="/ride/{{i.ride.id}}">Подробнее</a>
+                </li>
+            </ul>
+            {% endif %}
+            {% endfor %}
+            <a style="" class="btn btn-outline-primary" href="{% url 'myRides' %}">Мои поездки</a>
+        </div>
     </div>
-    <a style="margin-left:3%; margin-top:2%;" class="btn btn-outline-primary bot" href="{% url 'myRides' %}">Мои поездки</a>
-</div>
+<script src="{% static 'mainApp/js/app.js' %}"></script>
 {% endblock %}
