@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['rogo-tj.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = [ 'rogo-tj.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -133,8 +133,7 @@ TIME_ZONE = 'Asia/Tashkent'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-EMAIL_USE_TLS = False
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'Rogofounder@gmail.com'
 EMAIL_HOST_PASSWORD = 'Bulochka1989 '
