@@ -3,10 +3,10 @@
 {% block content %}
     <div data-id="block" class="container mt-4">
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search" name="search" />
+            <input class="form-control mr-sm-2" type="search" placeholder="Откуда?" aria-label="Search" name="search1" />
+            <input class="form-control mr-sm-2" type="search" placeholder="Куда?" aria-label="Search" name="search" />
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
         </form>
-        <h6>Введите название места сбора или конечного пункта.</h6>
         <!--<form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Поиск по месту сбора" aria-label="Search" name="search_pick" />
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
@@ -19,7 +19,7 @@
                 <h6><b>цена: {{i.price}} c.</b></h6>
                 <br />
                 {% if user.is_authenticated %}
-                <a class="btn btn-outline-primary" href="/ride/{{i.id}}">Подробнее</a>
+                <a class="btn btn-outline-primary" href="/list/{{i.id}}">Подробнее</a>
                 {% else %}
                 <a class="btn btn-outline-primary" href="{% url 'login'%}?next={{request.path}}">Подробнее</a>
                 {% endif %}

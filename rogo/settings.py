@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = [ 'rogo-tj.herokuapp.com','127.0.0.1']
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainApp',
-    'rides',
     'crispy_forms',
 ]
 
@@ -165,4 +164,8 @@ DATABASES['default'].update(db_from_env)
 # https://warehouse.python.org/project/whitenoise/
 
 MEDIA_URL = '/mainApp/image/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/image/users')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/mainApp/image/users')
+
+
+
+

@@ -1,14 +1,38 @@
 {% extends "mainApp/wrapper.html" %}
-
-{% block title %}Edit your account{% endblock %}
-
+{% load static %}
 {% block content %}
-<h1>Edit your account</h1>
-<p>You can edit your account using the following form:</p>
-<form action="." method="post" enctype="multipart/form-data">
-    {{ user_form.as_p }}
-    {{ profile_form.as_p }}
-    {% csrf_token %}
-    <p><input type="submit" value="Save changes"></p>
-</form>
+<style>
+    .profile-pic {
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-body">
+            <a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Назад</a>
+            <hr>
+            <h3 style="text-align: center">Редактирование профиля</h3>
+            <hr>
+            <img class="profile-pic" src="{{request.user.profile.avatar.url}}">
+
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="card card-body">
+
+            <form method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
+
+                <input class="btn btn-primary" type="submit" value="Завершить редактирование" name="Update Information">
+            </form>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
