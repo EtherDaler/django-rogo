@@ -11,7 +11,7 @@
                 <a style="margin-right:20px;" class="btn btn-outline-primary mb-2" href="{% url 'updateRide' i.id %}">Изменить</a>
                 <a class="btn btn-outline-danger mb-2" href="{% url 'deleteRide' i.id %}">Удалить</a>
                 <br />
-                <a class="btn btn-outline-primary" href="/ride/{{i.id}}">Подробнее</a>
+                <a class="btn btn-outline-primary" href="/list/{{i.id}}">Подробнее</a>
             </li>
         </ul>
         {% endif %}

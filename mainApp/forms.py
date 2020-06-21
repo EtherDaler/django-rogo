@@ -33,7 +33,7 @@ class CreateUserForm(UserCreationForm):
 class RideForm(forms.ModelForm):
     class Meta:
         model=Rides
-        fields = ('pick_up_location','drop_location','total_rides','luggage','date','time','car','car_number','car_year_issue','price','phone_number')
+        fields = ('pick_up_location','drop_location','total_rides','date','time','car','car_number','car_year_issue','price','phone_number')
     def __init__(self, *args,**kwargs):
         super().__init__(*args,**kwargs)
         for field in self.fields:

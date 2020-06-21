@@ -29,9 +29,32 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="add_form" method="post">
+                <form id="add_form" name="myForm" method="post">
                     {% csrf_token %}
-                    {{form}}
+                    Место сбора:
+                    <p><input type="text" class="form-control" placeholder="Город, ул... " name="pick_up_location"></p>
+                    Пункт назначения:
+                    <p><input type="text" class="form-control" placeholder="Город, ул..." name="drop_location" ></p>
+                    Дата:
+                    <p><input type="date" class="form-control" placeholder="гг-мм-дд" name="date" ></p>
+                    Время:
+                    <p><input type="time" class="form-control" placeholder="чч:мм" name="time" ></p>
+                    Номер телефона (используйте код страны и знак +):
+                    <p><input type="text" class="form-control" placeholder="+992123456789" name="phone_number" ></p>
+                    Количество пассажиров (от 1 до 10):
+                    <p><input type="number" class="form-control" min="1" max="10" placeholder="5" name="total_rides" ></p>
+                    <!--Возможность принять посылку/груз:
+                    <p><input id="myCheck" type="checkbox" class="form-control" name="luggage" onclick="myFunction()"></p>
+                    <p style="display:none" id="text1">Стоимость за кг. посылки/груза (с.):</p>
+                    <p><input style="display:none" id="text" class="form-control" type="text" placeholder="10" name="luggage_price" ></p>-->
+                    Марка автомобиля:
+                    <p><input type="text" class="form-control" placeholder="Mercedes-Benz E class" name="car" ></p>
+                    Год выпуска автомобиля:
+                    <p><input type="text" class="form-control" placeholder="2020" name="car_year_issue" ></p>
+                    Номерной знак автомобиля:
+                    <p><input type="text" class="form-control" placeholder="01 0000 GG" name="car_number"></p>
+                    Цена с человека (с.)
+                    <p><input type="text" class="form-control" placeholder="50" name="price" ></p>
                 </form>
             </div>
             <div class="modal-footer">
@@ -45,4 +68,25 @@
         </div>
     </div>
 </div>
+<!--
+<script type="text/javascript" language="javascript">
+function myFunction() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+  var text1 = document.getElementById("text1");
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+    text1.style.display = "block"
+  } else {
+    text.value = 0
+    text.style.display = "none";
+    text1.style.display = "none"
+  }
+}
+
+</script>
+-->
 {% endblock %}
