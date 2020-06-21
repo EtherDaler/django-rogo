@@ -11,7 +11,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from .models import UserModel, Rides, Join
 from django.contrib import messages
-from .decorators import  unauthenticated_user
+from .decorators import  unauthenticated_user, notAuthUser
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 from django.contrib.sites.shortcuts import get_current_site
@@ -29,6 +29,7 @@ from django.utils.translation import gettext as _
 def index(request):
     return render(request,'mainApp/index.html')
 
+@notAuthUser
 def home(request):
     return render(request,'mainApp/home.html')
 
@@ -110,7 +111,7 @@ def activate(request, uidb64, token):
 def edit(request):
     if request.method == 'POST':
         user_form = UserEditForm(request.POST, instance=request.user)
-        profile_form = UserForm(request.POST, instance=request.user.profile)
+        profile_form = UserForm(request.POST, request.FILES ,instance=request.user.profile)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
