@@ -17,14 +17,14 @@
     <p>Машина: {{getRide.car}} Год выпуска: {{getRide.car_year_issue}}</p>
     <p>Номер: {{getRide.car_number}}</p>
     <p>Мест: {{getRide.total_rides}}</p>
-    {#{% if getRide.luggage == getRide.false %}
-    <!--
+    <!--{#{% if getRide.luggage == getRide.false %}
+    
     <p>Возможность принять груз/посылку: нет</p>
     {% elif getRide.luggage == getRide.true %}
     <p>Возможность принять груз/посылку: да</p>
     <p>Цена за 1 кг посылки/груза: {{getRide.luggage_price}}</p>
--->
-    {% endif %}#}
+
+    {% endif %}#}-->
     <p>Водитель: <img class="profile-pic" src="{{getRide.author.profile.avatar.url}}" width="40" height="40"> {{getRide.author.first_name}} {{getRide.author.last_name}}</p>
     <p><h3>Цена: {{getRide.price}} c.</h3></p>
     <br>
